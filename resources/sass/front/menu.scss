@@ -1,0 +1,62 @@
+@import '../variables';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+#header {
+    .option-activated {
+        border-bottom: 2px solid $color_primary
+    }
+
+    .dropbtn {
+      color: white;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 370px;
+      overflow: auto;
+      z-index: 1;
+      margin-top: 4px;
+      right: 0px;
+      box-shadow: 1px 1px 5px 1px #E0E0E0
+    }
+
+    .dropdown-content a {
+      color: black;
+      text-decoration: none;
+      display: block;
+    }
+
+    .show {display: block;}
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track { 
+      border-radius: 10px;
+    }
+     
+    ::-webkit-scrollbar-thumb {
+      background: $color_primary; 
+      border-radius: 10px;
+      height: 28px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000; 
+    }
+
+    p {
+        margin-bottom: 0px;
+    }
+}

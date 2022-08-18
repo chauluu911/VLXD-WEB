@@ -1,0 +1,2 @@
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-773660691"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-773660691'); </script>
+<script> gtag('event', 'page_view', { 'send_to': 'AW-773660691', 'user_id': '{{ auth()->check() ? auth()->id() : -1 }}' }); </script>

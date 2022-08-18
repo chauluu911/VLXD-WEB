@@ -1,0 +1,27 @@
+// contain mods to bootstrap classes
+:not(.form-inline) {
+	label {
+		margin-bottom: calc(0.25rem + 1px);
+	}
+}
+
+.input-group {
+	border-radius: $border-radius;
+}
+
+.square {
+	border-radius: 0;
+}
+
+@each $color, $value in $theme-colors {
+	.btn-#{$color} {
+		@include button-variant($value, $value,
+			// modify
+			$hover-background: lighten($value, 7.5%),
+			$hover-border: lighten($value, 10%),
+			$active-background: lighten($value, 10%),
+			$active-border: lighten($value, 12.5%)
+			// /modify
+		);
+	}
+}

@@ -1,0 +1,12 @@
+@import '../variables';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+@import '~bootstrap-vue';
+@import "bootstrap-custom";
+
+@import "~vue-select/src/scss/vue-select.scss";
+@import "~vue-multiselect/dist/vue-multiselect.min.css";
+@import "~pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.min.css";

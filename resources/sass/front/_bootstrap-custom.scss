@@ -1,0 +1,7 @@
+// contain mods to bootstrap classes
+
+.btn-primary2 {
+	&, &:hover, &:active, &:focus {
+		color: white;
+	}
+}

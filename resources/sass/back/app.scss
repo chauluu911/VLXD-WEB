@@ -1,0 +1,11 @@
+@import '../variables';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+@import "layout";
+@import "table";
+@import "custom";
+
+@import "common/drag-and-drop-area";
+@import "user/user-detail";

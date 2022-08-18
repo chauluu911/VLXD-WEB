@@ -1,0 +1,102 @@
+@import '../variables';
+
+.div--login {
+	padding: 25px;
+	box-shadow: 0px 12px 15px -5px;
+}
+
+.input__email {
+	width: 94%;
+	border: 1px solid $color_primary;
+	border-left: none;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.input__password {
+	width: 88%;
+	border: 1px solid $color_primary;
+	border-left: none;
+	border-right: none;
+}
+
+.input:focus {
+	outline: #e8f0fe auto 0px;
+	outline-color: #e8f0fe;
+	outline-style: auto;
+}
+
+.btn--login {
+	color: #d1b556;
+	width: 100%;
+	background: $color_primary;
+	border-radius: 4px;
+	border: 1px solid $color_primary;
+	height: 32.5px
+}
+
+.label-checkbox {
+	display: block;
+	position: relative;
+	padding-left: 30px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.label-checkbox input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	height: 17px;
+	width: 17px;
+	border: 1px solid #0c0c84;
+}
+
+/* On mouse-over, add a grey background color */
+.label-checkbox:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.label-checkbox input:checked ~ .checkmark {
+	background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.label-checkbox input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.label-checkbox .checkmark:after {
+	left: 6px;
+	top: 2px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}

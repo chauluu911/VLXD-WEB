@@ -1,0 +1,20 @@
+.drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+
+    label {
+        cursor: pointer;
+    }
+
+    &.highlight {
+        border-color: purple;
+    }
+}
+
+.drop-area__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+}

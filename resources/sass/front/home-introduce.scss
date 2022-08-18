@@ -1,0 +1,30 @@
+@import "../variables";
+
+.content {
+    height: 100vh;
+    padding-top: 200px;
+}
+
+.btn {
+    width: 200px;
+    padding: 12px;
+    border-radius: 30px;
+    color: white;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.box-content {
+    background-image: url("https://previews.123rf.com/images/doozydo/doozydo1712/doozydo171200766/92340201-top-right-corner-gradient-with-dense-black-dots-on-white-background-.jpg");
+    position: relative;
+}
+
+.img-fluid {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.title-right {
+    text-align: right;
+}

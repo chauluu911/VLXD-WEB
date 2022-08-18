@@ -1,0 +1,20 @@
+@import '../variables';
+
+.btn__option {
+    background: $primary
+}
+
+.btn__option--active, .btn__option:hover, .btn__option:focus {
+    border: 1px solid $color_primary2;
+    background: $color_primary2
+}
+
+.span__title-detail {
+	color: $primary;
+	line-height: 2.5;
+}
+.avatar {
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+}

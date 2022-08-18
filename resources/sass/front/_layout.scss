@@ -1,0 +1,241 @@
+@import '../variables';
+html {
+    height: 100%;
+    overflow: auto;
+}
+body {
+    color: $normal_text;
+    padding-top: 96px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.banner-promotion {
+    position: fixed;
+    z-index: 2;
+    right: 10px;
+    bottom: 75px;
+    height: 120px;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+.main {
+    flex: 1 0 auto;
+    overflow-x: hidden;
+}
+#header {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    background: $color_primary;
+    min-height: 90px;
+
+    ::placeholder {
+        font-size: 14px;
+    }
+
+    .nav-item {
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-right: 1px solid white;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+
+        &:hover {
+            border-bottom: 3px solid $color_primary2;
+        }
+    }
+
+    .nav-item__not-hover {
+        &:hover {
+            border-bottom: 3px solid transparent !important;
+        }
+    }
+
+    .nav-item__mr {
+        margin-right: -24px;
+    }
+
+    .button-login {
+        border: 2px solid white;
+        border-radius: 20px;
+        padding: 8px 16px 8px 16px !important;
+        margin: 8px;
+
+        &:hover {
+        }
+    }
+
+    .nav-text {
+        height: 86px;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        padding: 10px;
+
+        &:hover {
+            text-decoration: none;
+            color: $color_primary2;
+        }
+    }
+
+    .nav-right {
+        color: white;
+        padding: 10px;
+
+        &:hover {
+            text-decoration: none;
+            color: $color_primary2;
+        }
+    }
+
+    .avatar {
+        cursor: pointer;
+    }
+
+    .dropdown-menu {
+        background: $color_primary;
+    }
+
+    .dropdown-item {
+        color: white;
+    }
+
+    .dropdown-notify-mobile {
+        position: absolute;
+        background-color: white;
+        min-width: 250px;
+        overflow: hidden;
+        z-index: 1;
+        bottom: 60px;
+        left: -150px;
+        box-shadow: rgb(224, 224, 224) 1px 1px 5px 1px;
+        a{
+            color: black;
+            text-decoration: none;
+        }
+    }
+
+    .nav-r {
+        height: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    .custom-nav-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 86px;
+        padding-right: $spacer * 0.25;
+        padding-left: $spacer * 0.25;
+        border-right: 1px solid #ff8839;
+    }
+    .menu-mobile-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        a:focus {
+            box-shadow: none !important;
+        }
+    }
+    .menu-mobile-item-text {
+        color : #999999;
+        .active {
+            color: $color_primary;
+        }
+    }
+    .custom-nav-text {
+        color: white;
+    }
+}
+
+$footer-text-color: black;
+footer {
+    color: $footer-text-color;
+    padding: 30px 0;
+    @media (max-width: 1200px) {
+        padding-bottom: 60px;
+    }
+
+
+    .footer-brand {
+        position: relative;
+        top: -10px;
+    }
+
+    a {
+        &, &:hover, &:focus, &:active {
+            color: $footer-text-color;
+        }
+    }
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: unset !important
+}
+
+.dropdown-menu {
+    top: 18px !important;
+    min-width: 200px;
+    border-radius: unset;
+    box-shadow: 1px 1px 5px 1px #E0E0E0
+}
+
+.footer-content {
+    .footer-title{
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        color: $normal_text;
+    }
+    .text {
+        font-size: 14px;
+        color: black;
+        padding-top: $spacer !important;
+        padding-bottom: $spacer !important;
+    }
+}
+
+.bootstrap-datetimepicker-widget {
+    height: 100%;
+}
+.bootstrap-datetimepicker-widget table {
+    background: white !important
+}
+
+
+.btn-primary {
+    color: white !important
+}
+
+.my-breadcrumb {
+    display: flex;
+    justify-content: flex-start;
+    .fa-home {
+        color: $color_primary;
+    }
+}
+
+@media (max-width: 500px) {
+    #order-list {
+        .profile-info{
+            padding: 0 !important;
+        }
+    }
+    .div-interest {
+        padding: 0 0 1rem 0 !important;
+    }
+    .saved-product-info, #payment, .payment-info, .change-password, .personal-info {
+        padding: 0 0.5rem !important;
+    }
+    .payment-contact {
+        margin: 1rem 0 0 0!important;
+        padding: 0 1rem !important;
+    }
+}

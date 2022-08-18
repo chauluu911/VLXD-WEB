@@ -1,0 +1,595 @@
+
+@import "../variables";
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+// contain new classes that not in bootstrap
+@keyframes spin {
+    0% {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.common-loading-body {
+    position: fixed !important;
+}
+
+[class^=common-loading] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+    background-color: #f6f6f699;
+    overflow: hidden;
+    &.icon {
+        opacity: 1;
+        background: none;
+        div:first-child {
+            left: 0;
+            top: 0;
+            width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            margin: 5px;
+        }
+    }
+    div:first-child {
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        width: 100px;
+        height: 100px;
+        margin: -50px 0 0 -50px;
+        border-radius: 50%;
+        box-shadow: 1px 3px 3px 0 darken($color_primary, 20%);
+        transform: translate3d(0, 0, 0);
+        animation: spin 2s linear infinite;
+        &:after, &:before {
+            content: '';
+            position: absolute;
+            border-radius: 50%
+        }
+        &:before {
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            box-shadow: 1px 3px 3px 0 $color_primary;
+            -webkit-animation: spin 3s linear infinite;
+            animation: spin 3s linear infinite
+        }
+        &:after {
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            box-shadow: 1px 3px 3px 0 lighten($color_primary, 20%);
+            animation: spin 1.5s linear infinite
+        }
+    }
+    .msg {
+        position: relative;
+        top: 50%;
+        text-align: center;
+        font-size: 2em;
+    }
+}
+
+.modal .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    background-color: $color_primary !important; // don't know why it's prefer bootstrap's .btn.close background-color. so important here
+    color: white;
+    width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    font-weight: 500;
+    &:hover {
+        color: white;
+    }
+    &:active, &:focus {
+        outline: none;
+    }
+}
+
+.default-toolbar {
+    display: flex;
+    line-height: 18px;
+    img {
+        height: 18px;
+    }
+    a[href] {
+        color: inherit;
+    }
+    .min-height-input-height {
+        height: 44px;
+    }
+}
+
+.custom-select {
+    border-radius: $input-border-radius;
+}
+
+a.no-decoration {
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a.no-focus {
+    outline: none;
+}
+
+.d-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d-flex-center-x {
+    display: flex;
+    justify-content: center;
+}
+.d-flex-center-y {
+    display: flex;
+    align-items: center;
+}
+
+.custom-modal {
+    @include media-breakpoint-down('md') {
+        .modal-dialog {
+            max-width: calc(100% - 30px);
+        }
+    }
+}
+
+label, legend {
+    &.required::after {
+        content: '*';
+        color: $danger;
+        margin-left: 5px;
+    }
+}
+
+.loading-mask, .block-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.background-image-center {
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+// must give custom width and background-image src
+.user-avatar {
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default !important;
+}
+
+.text-glow {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px $primary, 0 0 40px $primary, 0 0 50px $primary, 0 0 60px $primary, 0 0 70px $primary;
+}
+
+.text-glow-lg {
+    text-shadow: 0 0 20px #fff, 0 0 30px lighten($primary, 10%), 0 0 40px lighten($primary, 10%), 0 0 50px lighten($primary, 10%), 0 0 60px lighten($primary, 10%), 0 0 70px lighten($primary, 10%), 0 0 80px lighten($primary, 10%);
+}
+
+.custom-checkbox {
+    &:not(:disabled):not(.disabled) {
+        > label {
+            cursor: pointer;
+        }
+    }
+}
+
+.border-transparent {
+    border-color: transparent;
+}
+
+.time-picker {
+    &.is-invalid {
+        input {
+            border-color: $form-feedback-invalid-color !important;
+            background-image: $form-feedback-icon-invalid !important;
+            background-repeat: no-repeat;
+            background-position: right $input-height-inner-quarter center;
+            background-size: $input-height-inner-half $input-height-inner-half;
+        }
+    }
+}
+
+.modal-600px {
+    max-width: 600px;
+}
+
+.modal-700px {
+    max-width: 700px;
+}
+
+.border-round {
+    border-radius: 15px !important;
+}
+
+.unread-messages-count {
+    position: absolute;
+    right: -6px;
+    top: 8px;
+    > div {
+        padding: 3px 5px;
+        height: 21px;
+        background-color: $primary;
+        color: white;
+        min-width: 20px;
+        justify-content: center;
+        font-size: 12px;
+    }
+}
+
+.nav-ctn .nav-ctn-inner {
+    .navbar-nav {
+        .nav-item--collapsed .unread-messages-count {
+            right: 20px;
+        }
+        &.navbar-nav--collapsed {
+            .unread-messages-count {
+                right: 7px;
+                top: 1px;
+                & > div {
+                    height: 17px;
+                    min-width: 17px;
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+    .nav-item {
+        &:hover, &:active, &.nav-item--active {
+            & .unread-messages-count > div {
+                background-color: white;
+                color: $primary;
+            }
+        }
+    }
+}
+
+.outline-0 {
+    outline: 0;
+}
+
+// must set max-width manually
+.limited-1-row {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.btn-primary.secondary-active {
+    background-color: $color_primary2;
+    border-color: $color_primary2;
+}
+
+.v-select, .multiselect {
+    &.form-control {
+        padding: 0;
+        min-height: $input-height;
+        &.is-invalid {
+            background-image: none;
+        }
+        .vs__dropdown-toggle {
+            border: 0;
+            &:hover {
+                .vs__selected-options {
+                    overflow: visible;
+                }
+                .vs__selected {
+                    background-color: white;
+                }
+            }
+        }
+        .vs__dropdown-option {
+            white-space: normal;
+            padding: 4px 20px;
+        }
+        .vs__selected-options {
+            flex-wrap: unset;
+            align-items: flex-start;
+        }
+    }
+}
+
+.v-select.form-control {
+    height: $input-height;
+    &.extend-height {
+        &, & .vs__selected-options {
+            display: block;
+            height: unset !important;
+        }
+        .vs__selected {
+            display: inline-block;
+        }
+        .vs__search {
+            width: 100%;
+        }
+    }
+    &.dropdown .dropdown-toggle {
+        padding: 0;
+        &::after {
+            display: none;
+        }
+        input {
+            margin: 0;
+        }
+        input:disabled {
+            background-color: $input-disabled-bg;
+        }
+    }
+    input {
+        height: $input-height;
+        padding-right: 21px;
+        margin: 0;
+        opacity: unset !important;
+        &::placeholder {
+            color: #adadad;
+        }
+    }
+    .multiselect__spinner {
+        height: 29px;
+        z-index: 1;
+        &::before, &::after {
+            border-top-color: $primary;
+        }
+    }
+}
+
+.vs__search {
+    margin: 0;
+}
+
+.vs__actions {
+    padding: 0 5px 0 0;
+}
+
+.vs--single:not(.vs--open) {
+    .vs__selected + input {
+        display: none;
+    }
+}
+
+.vs--single.vs--searching {
+    .vs__selected {
+        display: block;
+    }
+    &.vs--open .vs__selected {
+        display: none;
+    }
+}
+
+.multiselect {
+    height: auto;
+    .multiselect__tags:hover {
+        overflow: unset;
+        .multiselect__single {
+            z-index: 9;
+        }
+    }
+    &.extend-height {
+        .multiselect__tags {
+            height: unset
+        }
+        .multiselect__placeholder {
+            margin-bottom: -4.5px;
+        }
+    }
+    .multiselect__option--highlight {
+        background-color: $primary;
+    }
+    .multiselect__spinner {
+        height: 31px;
+        &::before, &::after {
+            border-top-color: $primary;
+        }
+    }
+}
+
+.multiselect__option {
+    font-size: 14px;
+    white-space: normal;
+    line-height: 20px;
+}
+
+.multiselect__tags {
+    min-height: $input-height;
+    padding-top: 3px;
+    height: $input-height;
+    border: none;
+    overflow: hidden;
+}
+
+.multiselect__single {
+    padding-top: 5px;
+    font-size: 14px;
+}
+
+.multiselect__input {
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.multiselect__placeholder {
+    height: 28px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.multiselect__select.custom-caret {
+    height: 32px;
+    fill: rgba(60, 60, 60, 0.5);
+    padding: 7px 8px;
+    &::before {
+        content: none;
+    }
+}
+
+@each $bp-name, $bp in $grid-breakpoints {
+    @include media-breakpoint-up($bp-name) {
+        .border-top-#{$bp-name}, .border-#{$bp-name} {
+            border-top-width: $border-width !important;
+            border-top-style: solid;
+            border-top-color: $border-color;
+        }
+        .border-right-#{$bp-name}, .border-#{$bp-name} {
+            border-right-width: $border-width !important;
+            border-right-style: solid;
+            border-right-color: $border-color;
+        }
+        .border-bottom-#{$bp-name}, .border-#{$bp-name} {
+            border-bottom-width: $border-width !important;
+            border-bottom-style: solid;
+            border-bottom-color: $border-color;
+        }
+        .border-left-#{$bp-name}, .border-#{$bp-name} {
+            border-left-width: $border-width !important;
+            border-left-style: solid;
+            border-left-color: $border-color;
+        }
+        .border-top-#{$bp-name}-0, .border-#{$bp-name}-0 {
+            border-top: none !important;
+        }
+        .border-right-#{$bp-name}-0, .border-#{$bp-name}-0 {
+            border-right: none !important;
+        }
+        .border-bottom-#{$bp-name}-0, .border-#{$bp-name}-0 {
+            border-bottom: none !important;
+        }
+        .border-left-#{$bp-name}-0, .border-#{$bp-name}-0 {
+            border-left: none !important;
+        }
+    }
+}
+
+.div-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.shadow-right {
+    box-shadow: 8px 8px 10px #c8c8c8aa;
+}
+.shadow-right-sm {
+    box-shadow: 4px 4px 8px #c8c8c8aa;
+}
+.shadow-left {
+    box-shadow: -8px 8px 10px #c8c8c8aa;
+}
+.shadow-left-sm {
+    box-shadow: -4px 4px 8px #c8c8c8aa;
+}
+.shadow-around {
+    box-shadow: -3px 5px 8px #c8c8c8aa,
+    4px -4px 8px #c8c8c8aa;
+}
+
+.custom-shadow-1 {
+    box-shadow: 0 1px 3px #00000029;
+}
+
+.opacity-1 {
+    opacity: 1;
+}
+
+.bg-disabled {
+    background-color: $input-disabled-bg !important;
+}
+
+.creating-form-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+[v-cloak] {
+    &, & * {
+        display: none !important;
+    }
+}
+
+/* Css này để nhắc nhở bổ sung attribute alt */
+//img:not([alt]) {
+//    border: 15px solid red;
+//}
+
+
+.vs__selected-options {
+    overflow: hidden;
+    height: 25px;
+}
+
+.font-size-50px {
+    font-size: 50px;
+}
+
+.font-size-30px {
+    font-size: 30px;
+}
+
+.font-size-16px {
+    font-size: 16px;
+}
+
+.font-size-12px {
+    font-size: 12px;
+}
+
+.font-playfair {
+    font-family: "Playfair Display";
+}
+
+.font-medium {
+    font-weight: 500
+}
+.youtube-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}

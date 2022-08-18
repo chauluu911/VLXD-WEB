@@ -1,0 +1,72 @@
+@import '../variables';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+#login-modal {
+    z-index: 1049;
+    @include media-breakpoint-down('sm') {
+        .modal-dialog-centered {
+            align-items: normal;
+            &::before {
+                display: none;
+            }
+        }
+        .auth-area__form--register .form-check-inline {
+            width: 100%;
+        }
+    }
+
+	.modal-dialog {
+		max-width: 400px !important;
+        width: 100%;
+        @include media-breakpoint-up('xl') {
+            max-width: 400px !important;
+        }
+        @include media-breakpoint-up('sm') {
+            padding-left: 15px;
+        }
+        @include media-breakpoint-down('xs') {
+            padding: 10px;
+            margin: 0;
+        }
+	}
+
+    .close {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 5px;
+        width: 22px;
+        outline: none;
+        @include media-breakpoint-up('md') {
+            right: -10px;
+            top: -10px;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background: white !important;
+            font-size: 12px;
+            color: black !important;
+        }
+    }
+
+    label {
+        font-weight: 500;
+    }
+
+    .otp-input-group {
+        > div > div:not(:last-child) {
+            margin-right: 5px;
+        }
+        input.is-invalid {
+            padding-right: 0.75rem;
+        }
+    }
+
+    .form-control {
+        &.is-invalid {
+            background-image: none;
+        }
+    }
+}

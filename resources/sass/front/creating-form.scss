@@ -1,0 +1,75 @@
+@import '../variables';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+@import '../back/common/drag-and-drop-area';
+
+.package-select {
+	padding: 15px 15px 15px 40px;
+	position: relative;
+
+	> .custom-radio {
+		position: absolute;
+		left: 15px;
+	}
+}
+
+.package-select__price {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.package-select__duration {
+	font-size: 12px;
+}
+
+.timeline {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 40px;
+	position: relative;
+	&::before {
+		content: '';
+		width: 1px;
+		position: absolute;
+		height: calc(100% - 15px);
+		border-left: 1px dashed #707070;
+		left: 20px;
+		top: 5px;
+	}
+}
+.timeline__item {
+	margin-bottom: 15px;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: -30px;
+		width: 21px;
+		height: 21px;
+		border-radius: 50%;
+		border: 2px solid $success;
+		background-color: white;
+	}
+
+	a {
+		&, &:hover, &:active, &:focus {
+			color: black;
+		}
+	}
+}
+.timeline__item--current::before {
+	background-color: $success;
+}
+.timeline__item--success::after {
+	content: "\f00c";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	color: white;
+	font-size: 18px;
+	position: absolute;
+	top: -4px;
+	left: -27px;
+}
